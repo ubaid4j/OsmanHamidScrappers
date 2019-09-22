@@ -1,0 +1,76 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>1</groupId>
+  <artifactId>IHurb_GUI_Less</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+  
+  	<properties>
+	    <maven.compiler.source>12</maven.compiler.source>
+   		<maven.compiler.target>12</maven.compiler.target>
+	</properties>
+  
+  
+  
+  	<dependencies>
+  
+	  	
+	  	<dependency>
+    		<groupId>org.jsoup</groupId>
+    		<artifactId>jsoup</artifactId>
+    		<version>1.8.3</version>
+		</dependency>
+
+
+	<!-- https://mvnrepository.com/artifact/mysql/mysql-connector-java -->
+	<dependency>
+	    <groupId>mysql</groupId>
+	    <artifactId>mysql-connector-java</artifactId>
+	    <version>8.0.13</version>
+	</dependency>
+
+	  	
+
+	<!-- https://mvnrepository.com/artifact/org.ow2.asm/asm -->
+	<dependency>
+		<groupId>org.ow2.asm</groupId>
+		<artifactId>asm</artifactId>
+		<version>7.0</version>
+	</dependency>
+			
+	</dependencies>
+	
+
+	<build>
+		<plugins>
+			<plugin>
+				<artifactId>maven-assembly-plugin</artifactId>
+				<configuration>
+					<archive>
+						<manifest>
+							<mainClass>com.ubaid.app.IHURB_SCRAPPER_GUI_LESS</mainClass>
+						</manifest>
+					</archive>
+					<descriptorRefs>
+						<descriptorRef>jar-with-dependencies</descriptorRef>
+					</descriptorRefs>
+					<executions>
+						<execution>
+							<phase>package</phase>
+							<goals>
+								<goal>single</goal>
+							</goals>
+						</execution>
+					</executions>
+					
+					<filename>
+						${project.build.finalName}
+					</filename>
+
+					<appendAssemblyId>true</appendAssemblyId>
+					
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>	
+  
+</project>
