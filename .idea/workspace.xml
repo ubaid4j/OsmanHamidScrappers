@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="11c7ef56-43e6-4ee0-b52a-202a0abbf102" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/scrappingService/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/scrappingService/.mvn/wrapper/MavenWrapperDownloader.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/scrappingService/.mvn/wrapper/maven-wrapper.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/scrappingService/.mvn/wrapper/maven-wrapper.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/scrappingService/mvnw" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/scrappingService/mvnw.cmd" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/scrappingService/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/scrappingService/src/main/java/com/ubaid/scrape/scrappingService/ScrappingServiceApplication.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/scrappingService/src/main/resources/application.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/scrappingService/src/test/java/com/ubaid/scrape/scrappingService/ScrappingServiceApplicationTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SOUQ/src/main/java/com/ubaid/app/SOUQ_SCRAPPER.java" beforeDir="false" afterPath="$PROJECT_DIR$/SOUQ/src/main/java/com/ubaid/app/SOUQ_SCRAPPER.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SOUQ/src/main/java/com/ubaid/app/Test.java" beforeDir="false" afterPath="$PROJECT_DIR$/SOUQ/src/main/java/com/ubaid/app/Test.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SOUQ/src/main/java/com/ubaid/app/controller/AppHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/SOUQ/src/main/java/com/ubaid/app/controller/AppHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SOUQ/src/main/java/com/ubaid/app/model/document/Documents.java" beforeDir="false" afterPath="$PROJECT_DIR$/SOUQ/src/main/java/com/ubaid/app/model/document/Documents.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SOUQ/src/main/java/com/ubaid/app/model/scrapper/Scrapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/SOUQ/src/main/java/com/ubaid/app/model/scrapper/Scrapper.java" afterDir="false" />
+    </list>
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectId" id="1RI8HaGwhiT2q1bDMVfVjTtnwcK" />
+  <component name="PropertiesComponent">
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/scrappingService" />
+    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.0" />
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager">
+    <configuration name="[]" type="MavenRunConfiguration" factoryName="Maven" nameIsGenerated="true">
+      <MavenSettings>
+        <option name="myGeneralSettings" />
+        <option name="myRunnerSettings" />
+        <option name="myRunnerParameters">
+          <MavenRunnerParameters>
+            <option name="profiles">
+              <set />
+            </option>
+            <option name="goals">
+              <list />
+            </option>
+            <option name="pomFileName" />
+            <option name="profilesMap">
+              <map />
+            </option>
+            <option name="resolveToWorkspace" value="false" />
+            <option name="workingDirPath" value="$PROJECT_DIR$/scrappingService" />
+          </MavenRunnerParameters>
+        </option>
+      </MavenSettings>
+      <method v="2" />
+    </configuration>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="11c7ef56-43e6-4ee0-b52a-202a0abbf102" name="Default Changelist" comment="" />
+      <created>1569343162383</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1569343162383</updated>
+      <workItem from="1569343165069" duration="869000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+</project>
