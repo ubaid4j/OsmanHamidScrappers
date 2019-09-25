@@ -148,6 +148,10 @@ public class AppHandler
 		List<String> list = new ArrayList<>();
 //		list.add("https://saudi.souq.com/sa-en/bakeware/kitchen-accessories-316%7Cbakeware---and---accessories-526/a-t/s/?sortby=sr&page=1&ref=nav");
 		list.add("https://saudi.souq.com/sa-en/women/dresses-465/a-t/s/?page=1&ref=nav");
+		list.add("https://fashion.souq.com/sa-en/men-fashion/c/3844?page=1&ref=nav");
+		list.add("https://fashion.souq.com/sa-en/kids/c/13557?page=1&ref=nav");
+		list.add("https://fashion.souq.com/sa-en/sports/c/3824?page=1&ref=nav");
+		list.add("https://fashion.souq.com/sa-en/watches/c/13094?page=1&ref=nav");
 		return list;		
 	}
 	
@@ -178,7 +182,7 @@ public class AppHandler
 				
 				for(int i = 0; i < docList.size(); i++)
 				{
-					new Scrapper(docList.get(i), controller.getQueue());
+					new Scrapper(docList.get(i), controller.getQueue(), controller);
 				}	
 			}
 			catch(Exception exp)

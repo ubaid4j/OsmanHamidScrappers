@@ -1,6 +1,11 @@
 package com.ubaid.app;
 
 
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.InputStream;
+import java.net.URL;
+
 import com.ubaid.app.controller.Controller;
 import com.ubaid.app.model.logger.Queue;
 import com.ubaid.app.view.View;
@@ -37,8 +42,20 @@ public class SOUQ_SCRAPPER extends Application
 
 			
 			//loader
-			FXMLLoader loader = new FXMLLoader(getClass().getResource("view/View.fxml"));
+			
+			URL url = getClass().getResource("View.fxml");
+			System.out.println(url);
+			FXMLLoader loader = new FXMLLoader(url);
+			
 		
+//			@SuppressWarnings("deprecation")
+//			URL url = getFileFromResources("page.fxml").toURL();
+		
+			
+			
+//			FXMLLoader loader = new FXMLLoader(url);
+		
+			
 			//root is borderpane
 			Parent root = loader.load();
 			
@@ -46,12 +63,22 @@ public class SOUQ_SCRAPPER extends Application
 			Scene scene = new Scene(root);
 
 			//adding style sheets for logger
+//			@SuppressWarnings("deprecation")
+//			URL url2 = getFileFromResources("log-view.css").toURL();
+
+			URL url2 = getClass().getResource("log-view.css");
+			
 			scene.getStylesheets().add
-			(
-			    this.getClass().getResource("log-view.css").toExternalForm()
+			(			 
+				url2.toExternalForm()
 			);
 
-			primaryStage.getIcons().add(new Image(getClass().getResourceAsStream("icon.png")));
+//			File iconFile = getFileFromResources("icon.png");
+			URL url3 = getClass().getResource("icon.png");
+			File file = new File(url3.getFile());
+			InputStream stream = new FileInputStream(file);
+			
+			primaryStage.getIcons().add(new Image(stream));
 			primaryStage.setScene(scene);
 			primaryStage.setTitle("Scrapper");
 			primaryStage.show();
@@ -87,4 +114,18 @@ public class SOUQ_SCRAPPER extends Application
 		
 
 	}
+	
+//	 // get file from classpath, resources folder
+//    private File getFileFromResources(String fileName) {
+//
+//        ClassLoader classLoader = getClass().getClassLoader();
+//
+//        URL resource = classLoader.getResource(fileName);
+//        if (resource == null) {
+//            throw new IllegalArgumentException(fileName + " file is not found!");
+//        } else {
+//            return new File(resource.getFile());
+//        }
+//
+//    }
 }

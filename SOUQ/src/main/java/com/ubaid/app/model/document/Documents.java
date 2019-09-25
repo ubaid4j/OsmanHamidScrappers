@@ -27,6 +27,7 @@ public class Documents implements IDocument
 		url = getSpecialURL(url);
 		controller.getQueue().setIndex("First URL: " + url);		
 		int maxNumber = getMaxNumber(url);
+		
 		List<String> urlList = getURLs(url, maxNumber);
 		controller.getQueue().setIndex("total number of URL: " + urlList.size());
 		addDocuments(urlList);

@@ -27,9 +27,12 @@ public class Scrapper implements ScrapperI
 	private List<Products> products;
 	int index = 0;
 	WebDriver driver;
+	Controller controller;
 	
-	public Scrapper(Document document, Queue q) throws Exception
+	public Scrapper(Document document, Queue q, Controller controller) throws Exception
 	{		
+		
+		this.controller = controller;
 		products = new ArrayList<>();
 		try
 		{
@@ -124,7 +127,7 @@ public class Scrapper implements ScrapperI
 				q.setIndex(product_.toString());
 				Controller.getList().add(product_);
 				products.add(product_);
-				
+				controller.setRecord(product_);
 				//adding in the SOUQ database
 			}
 			
