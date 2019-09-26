@@ -13,7 +13,7 @@ import com.ubaid.app.model.object.Products;
 public class App
 {
 	
-	private static final String query = "select id, name, nameE, brand, productLink, imageLink, type, price from products;";
+	private static final String query = "select id, name, name_in_english, brand, product_link, image_link, type, price from product;";
 	
 	public static void main(String [] args)
 	{

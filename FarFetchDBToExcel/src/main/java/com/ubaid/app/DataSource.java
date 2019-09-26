@@ -40,7 +40,7 @@ public class DataSource
 			dataSource.setUseSSL( true );
 		    dataSource.setServerTimezone("GMT");
 		    dataSource.setServerName("localhost");
-		    dataSource.setDatabaseName("farfetch");
+		    dataSource.setDatabaseName("souq");
 		    dataSource.setPortNumber(3306);
 		    dataSource.setUser("root");
 		    dataSource.setPassword("password");
