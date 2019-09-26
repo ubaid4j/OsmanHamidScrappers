@@ -1,6 +1,6 @@
 package com.ubaid.scrape.SOUQScrapper.entity;
 
-public class URL
+public class URL implements Cloneable
 {
 	public String host;
 	public String language;
@@ -68,4 +68,32 @@ public class URL
 	public String toString() {
 		return String.format("%s/%s/%s&page=%d", getHost(), getLanguage(), getInternalPart(), getPage());
 	}
+
+	@Override
+	public URL clone() throws CloneNotSupportedException
+	{
+		return (URL) super.clone();
+	}
+
+	
+	public void addURL(String url)
+	{
+		url = url.replace(getHost() + "/", "");
+		url = url.replace(getLanguage() + "/", "");
+		url = url.replace("&page=1", "");
+		setInternalPart(url);
+	}
+	
+//	@Override
+//	public URL clone() throws CloneNotSupportedException
+//	{
+//		URL url = new URL();
+//		url.setHost(getHost());
+//		url.setInternalPart(getInternalPart());
+//		url.setPage(1);
+//		url.setLanguage(getLanguage());
+//		return url;
+//	}
+	
+	
 }
