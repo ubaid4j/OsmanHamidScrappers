@@ -2,9 +2,6 @@ package com.ubaid.scrape.SOUQScrapper.scrapper;
 
 
 import java.io.IOException;
-import java.util.HashSet;
-import java.util.Iterator;
-import java.util.Set;
 
 import org.jsoup.Jsoup;
 import org.springframework.stereotype.Component;
@@ -51,7 +48,9 @@ public class Scrapper
 
 			JsonNode eng_units = eng_data.get("units");
 			
+//			JsonNode eng_units = eng_node.get("data");
 
+			
 			ObjectMapper ar_mapper = new ObjectMapper();
 			JsonNode ar_node = ar_mapper.readTree(ar_response);
 			
@@ -59,6 +58,9 @@ public class Scrapper
 
 			JsonNode ar_units = ar_data.get("units");
 
+//			JsonNode ar_units = ar_node.get("data");
+
+			
 			EnArNodes nodes = new EnArNodes(eng_units, ar_units);
 			
 			return nodes;

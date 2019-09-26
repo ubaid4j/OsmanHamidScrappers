@@ -33,12 +33,27 @@ public class RunApplicationService
 
 		for(EnArUrls urlSet : urlLists)
 		{
-			EnArNodes nodes = service.getAllUnits(urlSet);
-			List<Product> products = productScrapeService.getAllProducts(nodes);
-			for(Product product : products)
+			try
 			{
-				cService.save(product);
-				break;
+				EnArNodes nodes = service.getAllUnits(urlSet);
+				List<Product> products = productScrapeService.getAllProducts(nodes);
+				for(Product product : products)
+				{
+					try
+					{
+						cService.save(product);
+						
+					}
+					catch(Exception exp)
+					{
+						
+					}
+				}
+				
+			}
+			catch(Exception exp)
+			{
+				
 			}
 		}
 	}

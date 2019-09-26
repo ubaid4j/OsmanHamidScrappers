@@ -7,6 +7,21 @@ public class URL
 	public int page;
 	public String category;
 	public String internalPart;
+	public String urlWithoutPage;
+	
+	
+	
+	public URL(String urlWithoutPage) {
+		super();
+		this.urlWithoutPage = urlWithoutPage;
+	}
+	
+	public String getUrlWithoutPage() {
+		return urlWithoutPage;
+	}
+	public void setUrlWithoutPage(String urlWithoutPage) {
+		this.urlWithoutPage = urlWithoutPage;
+	}
 	public String getHost() {
 		return host;
 	}
@@ -51,6 +66,6 @@ public class URL
 	
 	@Override
 	public String toString() {
-		return String.format("%s/%s/%s/%s&page=%d", getHost(), getLanguage(), getCategory(), getInternalPart(), getPage());
+		return String.format("%s/%s/%s&page=%d", getHost(), getLanguage(), getInternalPart(), getPage());
 	}
 }
