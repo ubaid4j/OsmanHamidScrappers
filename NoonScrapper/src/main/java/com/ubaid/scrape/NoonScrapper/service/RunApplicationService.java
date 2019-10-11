@@ -1,60 +1,76 @@
 package com.ubaid.scrape.NoonScrapper.service;
 
 import java.util.List;
+import java.util.Random;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.ubaid.scrape.NoonScrapper.entity.EnArNodes;
-import com.ubaid.scrape.NoonScrapper.entity.EnArUrls;
-import com.ubaid.scrape.NoonScrapper.entity.Product;
-import com.ubaid.scrape.NoonScrapper.entity.URL;
+import com.ubaid.scrape.NoonScrapper.service.def.CookieService;
+import com.ubaid.scrape.NoonScrapper.service.def.FileService;
+import com.ubaid.scrape.NoonScrapper.service.def.ProductScrapperService;
+import com.ubaid.scrape.NoonScrapper.service.def.ResponseService;
+
 
 @Service
 public class RunApplicationService
 {
-	@Autowired
-	WebScrapeService service;
 	
 	@Autowired
-	URLService urlService;
+	FileService fileService;
 	
 	@Autowired
-	ProductScrapeService productScrapeService;
+	CookieService cookieService;
 	
 	@Autowired
-	ProductCService cService;
+	ResponseService responseService;
 
+
+	@Autowired
+	ProductScrapperService productScrapperService;
 	
-	public void run(URL url)
+	private final Random random = new Random();
+	
+	public void run()
 	{
-		List<EnArUrls> urlLists = urlService.getURLs(url);
-				
+		//get all categories from the file
+		List<String> categories = fileService.getAllCategories();
+		
+		int size = categories.size();
 
-		for(EnArUrls urlSet : urlLists)
+		for (int i = 0; i < size; i++)
 		{
-			try
+			//set cookie
+			if (i == 0)
 			{
-				EnArNodes nodes = service.getAllUnits(urlSet);
-				List<Product> products = productScrapeService.getAllProducts(nodes);
-				for(Product product : products)
+				cookieService.setRefferal(categories.get(i));
+				cookieService.setCookie();
+			}
+			
+			int totalPages = responseService.lastPage(categories.get(i));
+			
+			for(int pageNumber = 0; pageNumber < totalPages; pageNumber++)
+			{
+				try
 				{
-					try
-					{
-						cService.save(product);
-						
-					}
-					catch(Exception exp)
-					{
-						
-					}
+					EnArNodes node = responseService.get(categories.get(i), pageNumber + 1);
+					productScrapperService.getProducts(node);
+					
+					Thread.sleep(random.nextInt(2000));
+					
+				}
+				catch(Exception exp)
+				{
+					System.out.println("[Error:] " + getClass().getSimpleName());
 				}
 				
 			}
-			catch(Exception exp)
-			{
-				
-			}
 		}
+		
 	}
+	
+	
+	
+	
 }

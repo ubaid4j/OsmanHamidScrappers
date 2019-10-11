@@ -1,8 +1,7 @@
-package com.ubaid.scrape.NoonScrapper.service;
+package com.ubaid.scrape.NoonScrapper.service.def;
 
 import com.ubaid.scrape.NoonScrapper.entity.Product;
 
-public interface ProductCService
-{
+public interface ProductCRUDService {
 	public Product save(Product product);
 }

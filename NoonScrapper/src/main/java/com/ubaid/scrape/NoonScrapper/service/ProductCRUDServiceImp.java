@@ -5,13 +5,13 @@ import org.springframework.stereotype.Service;
 
 import com.ubaid.scrape.NoonScrapper.dao.ProductCDAO;
 import com.ubaid.scrape.NoonScrapper.entity.Product;
+import com.ubaid.scrape.NoonScrapper.service.def.ProductCRUDService;
 
 @Service
-public class ProductCServiceImp implements ProductCService
-{
+public class ProductCRUDServiceImp implements ProductCRUDService {
 
 	@Autowired
-	private ProductCDAO dao;
+	ProductCDAO dao;
 	
 	@Override
 	public Product save(Product product) {

@@ -1,6 +1,5 @@
 package com.ubaid.scrape.NoonScrapper;
 
-import static org.hamcrest.CoreMatchers.nullValue;
 import static org.junit.Assert.assertNotNull;
 
 import java.io.IOException;
@@ -16,8 +15,6 @@ import org.junit.runner.RunWith;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
-import com.fasterxml.jackson.annotation.PropertyAccessor;
-import com.fasterxml.jackson.annotation.JsonAutoDetect.Visibility;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.SerializationFeature;
@@ -27,9 +24,9 @@ import com.ubaid.scrape.NoonScrapper.entity.PostBody;
 @SpringBootTest
 public class NoonScrapperApplicationTests {
 
-	private static final String USER_AGENT = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.77 Safari/537.36";
-	private static final String NEW_USER_AGENT = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/77.0.3865.90 Safari/537.36";
-	private static final String REFERRAL = "http://www.google.com";
+//	private static final String USER_AGENT = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.77 Safari/537.36";
+//	private static final String NEW_USER_AGENT = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/77.0.3865.90 Safari/537.36";
+//	private static final String REFERRAL = "http://www.google.com";
 
 	
 	@Test
@@ -43,12 +40,12 @@ public class NoonScrapperApplicationTests {
 			postBody.setLimit(150);
 			postBody.setPage(1);
 //			postBody.setBrand(Arrays.asList("huawei"));
-			postBody.setCategory(Arrays.asList("electronics-and-mobiles/mobiles-and-accessories/mobiles-20905"));
+			postBody.setFilterKey(Arrays.asList("all-electronics"));
 
 			JsonNode node = mapper.convertValue(postBody, JsonNode.class);
 			
 			Map<String, String> cookies = getCookies();
-			String _cookie = "next-i18next=en; _gcl_au=1.1.1263041777.1570800986; _scid=c4128bd6-7044-4207-a4c1-abdc484df0ad; nguest=";
+			String _cookie = "next-i18next=ar; _gcl_au=1.1.1263041777.1570800986; _scid=c4128bd6-7044-4207-a4c1-abdc484df0ad; nguest=";
 			_cookie += cookies.get("nguest");
 			_cookie += "; _sctr=1|1570734000000; __zlcmid=uiibTxXrHcCCwF";
 			
@@ -64,13 +61,13 @@ public class NoonScrapperApplicationTests {
 			headers.put("content-type", "application/json");
 			headers.put("cookie", _cookie);
 			headers.put("pragma", "no-cache");
-			headers.put("referer", "https://www.noon.com/saudi-en/electronics-and-mobiles/mobiles-and-accessories/mobiles-20905?page=2");
+			headers.put("referer", "https://www.noon.com/saudi-ar/" + "all-electronics?page=2");
 			headers.put("sec-fetch-mode", "cors");
 			headers.put("sec-fetch-site", "same-origin");
 			headers.put("user-agent", "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/77.0.3865.90 Safari/537.36");
 			headers.put("x-cms", "v2");
 			headers.put("x-content", "desktop");
-			headers.put("x-locale", "en-sa");
+			headers.put("x-locale", "ar-sa");
 			headers.put("x-platform", "web");
 
 			
@@ -97,7 +94,7 @@ public class NoonScrapperApplicationTests {
 //					.execute()
 //					.body();
 			
-			String body = response.body();
+//			String body = response.body();
 			
 			assertNotNull(response);
 			
@@ -116,7 +113,7 @@ public class NoonScrapperApplicationTests {
 		try
 		{
 			
-			Map<String, String> cookies = new HashMap<String, String>();
+//			Map<String, String> cookies = new HashMap<String, String>();
 			
 			Map<String, String> headers = new HashMap<String, String>();
 			headers.put("authority", "www.noon.com");
@@ -128,7 +125,7 @@ public class NoonScrapperApplicationTests {
 			headers.put("cache-control", "no-cache, max-age=0, must-revalidate, no-store");
 			headers.put("cookie", "next-i18next=en; _gcl_au=1.1.1263041777.1570800986; _scid=c4128bd6-7044-4207-a4c1-abdc484df0ad");
 			headers.put("pragma", "no-cache");
-			headers.put("referer", "https://www.noon.com/saudi-en/electronics-and-mobiles/mobiles-and-accessories/mobiles-20905?page=2");
+			headers.put("referer", "https://www.noon.com/saudi-en/" + "all-electronics?page=2");
 			headers.put("sec-fetch-mode", "cors");
 			headers.put("sec-fetch-site", "same-origin");
 			headers.put("user-agent", "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/77.0.3865.90 Safari/537.36");

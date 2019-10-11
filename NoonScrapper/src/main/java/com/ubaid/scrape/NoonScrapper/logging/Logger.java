@@ -10,7 +10,6 @@ import org.aspectj.lang.annotation.Aspect;
 import org.springframework.stereotype.Component;
 
 import com.ubaid.scrape.NoonScrapper.entity.EnArNodes;
-import com.ubaid.scrape.NoonScrapper.entity.EnArUrls;
 import com.ubaid.scrape.NoonScrapper.entity.Product;
 
 @Aspect
@@ -27,9 +26,10 @@ public class Logger extends Logging
 		try
 		{
 			result = proceedingJoinPoint.proceed();
-			EnArUrls url = (EnArUrls) proceedingJoinPoint.getArgs()[0];
+			String url = (String) proceedingJoinPoint.getArgs()[0];
+			int pageNumber = (int) proceedingJoinPoint.getArgs()[1];
 			EnArNodes nodes = (EnArNodes) result;
-			System.out.println(info + " got " + nodes.getEnNode().size() + " products units from the " + url);
+			System.out.println(info + " got " + nodes.getEnNode().get("hits").size() + " products units from the " + url + " and page number " + pageNumber);
 		}
 		catch(Exception exp)
 		{
