@@ -50,10 +50,13 @@ public class RunApplicationService
 			
 			int totalPages = responseService.lastPage(categories.get(i));
 			
-			for(int pageNumber = 0; pageNumber < totalPages; pageNumber++)
+			for(int pageNumber = 50; pageNumber < totalPages; pageNumber++)
 			{
 				try
 				{
+					if (pageNumber % 3 == 0)
+						cookieService.refreshCookie();
+					
 					EnArNodes node = responseService.get(categories.get(i), pageNumber + 1);
 					productScrapperService.getProducts(node);
 					

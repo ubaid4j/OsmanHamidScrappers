@@ -17,7 +17,7 @@ public class CookieServiceImp implements CookieService
 {
 
 	public static String nguest = null;
-	private String refferel = "https://www.noon.com/saudi-en/";
+	private String refferel = null;
 	private Map<String, String> cookies;
 	private String lang = "en";
 	private String loc = "en-sa";
@@ -87,6 +87,14 @@ public class CookieServiceImp implements CookieService
 		{
 			nguest = nGuest.get("nguest");
 		}
+	}
+	
+	@Override
+	public void refreshCookie()
+	{
+		nguest = null;
+		cookies = null;
+		_setCookie();
 	}
 	
 	private Map<String, String> getCookies()

@@ -14,7 +14,7 @@ public class PostBody implements Serializable
 	private List<String> category = new ArrayList<String>();
 	private List<String> filterKey = new ArrayList<String>();
 	private Object f = new Object();
-	private Sort sort = new Sort("popularity", "desc");
+	private Object sort = new Object();
 	private Integer limit;
 	private Integer page;
 	public PostBody(List<String> brand, List<String> category, List<String> filterKey, Object f, Sort sort,
@@ -52,10 +52,10 @@ public class PostBody implements Serializable
 	public void setF(Object f) {
 		this.f = f;
 	}
-	public Sort getSort() {
+	public Object getSort() {
 		return sort;
 	}
-	public void setSort(Sort sort) {
+	public void setSort(Object sort) {
 		this.sort = sort;
 	}
 	public Integer getLimit() {

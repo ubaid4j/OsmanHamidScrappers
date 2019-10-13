@@ -9,4 +9,5 @@ public interface CookieService
 	public void setRefferal(String referal);
 	public void setArabic();
 	public void setEnglish();
+	public void refreshCookie();
 }
