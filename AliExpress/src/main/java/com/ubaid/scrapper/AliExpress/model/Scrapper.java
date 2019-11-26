@@ -63,12 +63,12 @@ public class Scrapper
 			
 			previousCollection.addAll(listOfElements);
 			List<WebElement> nextElements = getNextElements(driver);
-			nextElements.removeAll(previousCollection);
 			listOfElements = nextElements;
 			
 		} while(counter < 100);
 		
-//		System.err.println(listOfElements.size());
+			
+		System.err.println(listOfElements.size());
 //		List<WebElement> nextElements = getNextElements(driver);
 //		System.err.println(nextElements.size());
 //		nextElements = getNextElements(driver);

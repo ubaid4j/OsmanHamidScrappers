@@ -40,7 +40,7 @@ public class DataSource
 			dataSource.setUseSSL( true );
 		    dataSource.setServerTimezone("GMT");
 		    dataSource.setServerName("localhost");
-		    dataSource.setDatabaseName("souq");
+		    dataSource.setDatabaseName("noon");
 		    dataSource.setPortNumber(3306);
 		    dataSource.setUser("root");
 		    dataSource.setPassword("password");

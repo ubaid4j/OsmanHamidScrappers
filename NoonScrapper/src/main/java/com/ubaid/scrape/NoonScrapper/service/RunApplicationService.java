@@ -50,7 +50,7 @@ public class RunApplicationService
 			
 			int totalPages = responseService.lastPage(categories.get(i));
 			
-			for(int pageNumber = 50; pageNumber < totalPages; pageNumber++)
+			for(int pageNumber = 1; pageNumber < totalPages; pageNumber++)
 			{
 				try
 				{
