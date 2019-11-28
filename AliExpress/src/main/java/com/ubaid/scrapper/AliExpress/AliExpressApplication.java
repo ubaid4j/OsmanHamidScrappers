@@ -15,7 +15,7 @@ public class AliExpressApplication implements CommandLineRunner {
 
 	@Override
 	public void run(String... args) throws Exception {
-		Scrapper scrapper = new Scrapper();
+		new Scrapper();
 	}
 
 }
